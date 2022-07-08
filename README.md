@@ -1,6 +1,6 @@
 # NMSU-CS-271-OOP-Headers
 
-This repository contains the files needed to run many of the examples in Prof. Stroustrup's Programming: Principles and Practice Using C++. These are the original header files provided by Prof. Stroustrup at (https://www.stroustrup.com/Programming/). I have cloned them here for use in assignments for NMSU's CS 271 course, since some of those pages are not available. I have tested and edited as needed.
+This repository contains the files (mostly headers, some implementations) needed to run many of the examples in Prof. Stroustrup's *Programming: Principles and Practice Using C++*. These are the original header files provided by Prof. Stroustrup at (https://www.stroustrup.com/Programming/). I have cloned them here for use in assignments for NMSU's CS 271 course, since some of those pages are not available. I have tested and edited as needed.
 
 For the most part, `std_lib_facilities.h` contains most of what is needed for early assignments. Later assignments will make use of `fltk.h` and the contents of `/GUI/`.
 
