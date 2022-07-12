@@ -26,7 +26,6 @@ struct Color {
 
 	Color(Color_type cc) :c(Fl_Color(cc)), v(visible) { }
 	Color(Color_type cc, Transparency vv) :c(Fl_Color(cc)), v(vv) { }
-    Color(Fl_Color cc) :c(cc), v(visible) { }
 	Color(int cc) :c(Fl_Color(cc)), v(visible) { }
 	Color(Transparency vv) :c(Fl_Color()), v(vv) { }
 
