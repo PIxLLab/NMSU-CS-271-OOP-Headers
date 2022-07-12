@@ -1,5 +1,5 @@
 #include "Graph.h"
-#include<map>
+#include <map>
 
 namespace Graph_lib {
 
@@ -24,7 +24,7 @@ void Shape::draw() const
 
 // does two lines (p1,p2) and (p3,p4) intersect?
 // if se return the distance of the intersect point as distances from p1
-inline pair<double,double> line_intersect(Point p1, Point p2, Point p3, Point p4, bool& parallel) 
+inline std::pair<double,double> line_intersect(Point p1, Point p2, Point p3, Point p4, bool& parallel) 
 {
     double x1 = p1.x;
     double x2 = p2.x;
@@ -38,10 +38,10 @@ inline pair<double,double> line_intersect(Point p1, Point p2, Point p3, Point p4
 	double denom = ((y4 - y3)*(x2-x1) - (x4-x3)*(y2-y1));
 	if (denom == 0){
 		parallel= true;
-		return pair<double,double>(0,0);
+		return std::pair<double,double>(0,0);
 	}
 	parallel = false;
-	return pair<double,double>( ((x4-x3)*(y1-y3) - (y4-y3)*(x1-x3))/denom,
+	return std::pair<double,double>( ((x4-x3)*(y1-y3) - (y4-y3)*(x1-x3))/denom,
 								((x2-x1)*(y1-y3) - (y2-y1)*(x1-x3))/denom);
 }
 
@@ -51,7 +51,7 @@ inline pair<double,double> line_intersect(Point p1, Point p2, Point p3, Point p4
 //in which case intersection is set to the point of intersection
 bool line_segment_intersect(Point p1, Point p2, Point p3, Point p4, Point& intersection){
    bool parallel;
-   pair<double,double> u = line_intersect(p1,p2,p3,p4,parallel);
+   std::pair<double,double> u = line_intersect(p1,p2,p3,p4,parallel);
    if (parallel || u.first < 0 || u.first > 1 || u.second < 0 || u.second > 1) return false;
    intersection.x = p1.x + u.first*(p2.x - p1.x);
    intersection.y = p1.y + u.first*(p2.y - p1.y);
@@ -310,7 +310,7 @@ bool can_open(const string& s)
             // check if a file named s exists and can be opened for reading
 {
 	ifstream ff(s.c_str());
-	return ff;
+	return ff.good(); // previously assumed existence == true; added .good(); not sure this is exactly right
 }
 
 

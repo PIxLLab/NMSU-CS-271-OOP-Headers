@@ -1,5 +1,4 @@
 #include "GUI.h"
-#include "std_lib_facilities.h"
 #include <sstream>
 
 using namespace Graph_lib;
